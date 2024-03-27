@@ -25,11 +25,31 @@ public class Main {
 		
 		Miejsce meRn = mapa[0];
 		Scanner scan = new Scanner(System.in);
+		int opt;
 		
 		while(!meRn.equals(mapa[6])) {
 			System.out.println("Jesteś w "+meRn.getName());
 			System.out.println("Możesz iść \n "+meRn.returnEntry());
+			System.out.println("Dokąd chcesz zmierzać?");
+			opt = scan.nextInt();
+			switch(opt) {
+			case 1:
+				meRn=meRn.chooseEntry(0);
+				break;
+			case 2:
+				meRn=meRn.chooseEntry(1);
+				break;
+			case 3:
+				meRn=meRn.chooseEntry(2);
+				break;
+			case 4:
+				meRn=meRn.chooseEntry(3);
+				break;
+			default:
+				System.out.println("Nie ma takiego kierunku");
+			}
 		}
+		System.out.println("Wygrałeś!");
 	}
 
 }

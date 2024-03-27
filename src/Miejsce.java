@@ -16,11 +16,14 @@ public class Miejsce {
 	}
 	public String returnEntry() {
 		String door = "";
-		if(przejscia[0]!=null) door+="do przodu: ";
-		if(przejscia[1]!=null) door+="do tyłu: ";
-		if(przejscia[2]!=null) door+="w lewo: ";
-		if(przejscia[3]!=null) door+="w prawo: ";
+		if(przejscia[0]!=null) door+="1 - do przodu: ";
+		if(przejscia[1]!=null) door+="2 - do tyłu: ";
+		if(przejscia[2]!=null) door+="3 - w lewo: ";
+		if(przejscia[3]!=null) door+="4 - w prawo: ";
 		return door;
+	}
+	public Miejsce chooseEntry(int i){
+		return przejscia[i];
 	}
 	public String getName() {
 		return name;
