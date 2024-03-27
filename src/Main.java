@@ -28,7 +28,7 @@ public class Main {
 		
 		while(!meRn.equals(mapa[6])) {
 			System.out.println("Jesteś w "+meRn.getName());
-			System.out.println("Możesz iść do: \n -"+meRn.returnEntry());
+			System.out.println("Możesz iść \n "+meRn.returnEntry());
 		}
 	}
 

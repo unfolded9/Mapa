@@ -16,8 +16,8 @@ public class Miejsce {
 	}
 	public String returnEntry() {
 		String door = "";
-		if(przejscia[0]!=null) door+="przodu: ";
-		if(przejscia[1]!=null) door+="tyłu: ";
+		if(przejscia[0]!=null) door+="do przodu: ";
+		if(przejscia[1]!=null) door+="do tyłu: ";
 		if(przejscia[2]!=null) door+="w lewo: ";
 		if(przejscia[3]!=null) door+="w prawo: ";
 		return door;
