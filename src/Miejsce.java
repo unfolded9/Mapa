@@ -16,10 +16,10 @@ public class Miejsce {
 	}
 	public String returnEntry() {
 		String door = "";
-		if(przejscia[0]!=null) door+="1 - do przodu: ";
-		if(przejscia[1]!=null) door+="2 - do tyłu: ";
-		if(przejscia[2]!=null) door+="3 - w lewo: ";
-		if(przejscia[3]!=null) door+="4 - w prawo: ";
+		if(przejscia[0]!=null) door+=" 1 - do przodu \n";
+		if(przejscia[1]!=null) door+=" 2 - do tyłu \n";
+		if(przejscia[2]!=null) door+=" 3 - w lewo \n";
+		if(przejscia[3]!=null) door+=" 4 - w prawo \n";
 		return door;
 	}
 	public Miejsce chooseEntry(int i){

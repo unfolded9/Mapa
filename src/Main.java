@@ -15,7 +15,7 @@ public class Main {
 		mapa[6] = new Miejsce("Koniec");
 		
 		mapa[0].addEntry(null, mapa[1], null, null);
-		mapa[1].addEntry(mapa[0], mapa[1], null, mapa[2]);
+		mapa[1].addEntry(mapa[0], null, null, mapa[2]);
 		mapa[2].addEntry(null, null, mapa[1], mapa[3]);
 		mapa[3].addEntry(null, mapa[5], mapa[2], mapa[4]);
 		mapa[4].addEntry(null, null, mapa[3], null);
@@ -28,26 +28,33 @@ public class Main {
 		int opt;
 		
 		while(!meRn.equals(mapa[6])) {
+			System.out.println("=====================");
 			System.out.println("Jesteś w "+meRn.getName());
-			System.out.println("Możesz iść \n "+meRn.returnEntry());
+			System.out.println("Możesz iść \n"+meRn.returnEntry());
+			System.out.println("=====================");
+			do {
 			System.out.println("Dokąd chcesz zmierzać?");
 			opt = scan.nextInt();
+			}while(!(opt==1||opt==2||opt==3||opt==4));
+			int i=0;
 			switch(opt) {
 			case 1:
-				meRn=meRn.chooseEntry(0);
+				i=0;
 				break;
 			case 2:
-				meRn=meRn.chooseEntry(1);
+				i=1;
 				break;
 			case 3:
-				meRn=meRn.chooseEntry(2);
+				i=2;
 				break;
 			case 4:
-				meRn=meRn.chooseEntry(3);
+				i=3;
 				break;
-			default:
-				System.out.println("Nie ma takiego kierunku");
 			}
+			if(meRn.chooseEntry(i)!=null)
+				meRn=meRn.chooseEntry(i);
+			else
+				System.out.println("!!Nie ma takiego kierunku!! \n");
 		}
 		System.out.println("Wygrałeś!");
 	}
